@@ -4,10 +4,11 @@ if(PHP_SAPI != 'cli') die('ERROR: You must run this script under shell.');
 
 chdir(dirname(__FILE__));
 
+date_default_timezone_set('Europe/Vienna');
 declare(ticks = 1);
 require 'vendor/autoload.php';
 
-use Symfony\Component\Yaml\Yaml;
+use \Symfony\Component\Yaml\Yaml;
 
 $exit = 0;
 function signalHandler($signo){ global $exit; $exit++; if($exit >= 2) exit(); }
