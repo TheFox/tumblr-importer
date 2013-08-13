@@ -53,19 +53,20 @@ if(!isset($paramters['tumblr']['blog'])){
 #var_export($client);exit();
 
 
-$data = array(
-	#'api_key' => $paramters['tumblr']['consumer_key'],
-	#'type' => 'quote',
-	'type' => 'text',
-	#'base-hostname' => $paramters['tumblr']['blog'],
-	#'base-hostname' => $paramters['tumblr']['blog'].'.tumblr.com',
-	'text' => 'Hi from API.',
-	#'source' => 'source1',
-);
+
+
+$options = array('type' => 'quote', 'text' => 'Text '.date('Y/m/d H:i:s'), 'source' => 'Source', 'tags' => 'Test');
+
+$options = array('type' => 'text', 'title' => 'Title '.date('Y/m/d H:i:s'), 'body' => 'Body', 'tags' => 'Test');
+
+$options = array('type' => 'link', 'title' => 'Title '.date('Y/m/d H:i:s'), 'url' => 'http://fox21.at', 'tags' => 'Test');
+
+
+
 try{
-	$res = $client->createPost($paramters['tumblr']['blog'].'.tumblr.com', $data);
-	#$res = $client->createPost($paramters['tumblr']['blog'], $data);
-	var_export($res);
+	$res = $client->createPost($paramters['tumblr']['blog'].'.tumblr.com', $options);
+	#$res = $client->createPost($paramters['tumblr']['blog'], $options);
+	#var_export($res);
 }
 catch(Exception $e){
 	#var_export($e);
