@@ -11,9 +11,11 @@ require 'vendor/autoload.php';
 use \Symfony\Component\Yaml\Yaml;
 
 $exit = 0;
-function signalHandler($signo){ global $exit; $exit++; if($exit >= 2) exit(); }
-pcntl_signal(SIGTERM, 'signalHandler');
-pcntl_signal(SIGINT, 'signalHandler');
+if(function_exists('pcntl_signal')){
+	function signalHandler($signo){ global $exit; $exit++; if($exit >= 2) exit(); }
+	pcntl_signal(SIGTERM, 'signalHandler');
+	pcntl_signal(SIGINT, 'signalHandler');
+}
 
 
 $paramtersFilePath = 'parameters.yml';
