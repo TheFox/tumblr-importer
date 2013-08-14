@@ -57,11 +57,9 @@ if(!isset($paramters['tumblr']['blog'])){
 
 
 
-$options = array('type' => 'quote', 'text' => 'Text '.date('Y/m/d H:i:s'), 'source' => 'Source', 'tags' => 'Test');
-
-$options = array('type' => 'text', 'title' => 'Title '.date('Y/m/d H:i:s'), 'body' => 'Body', 'tags' => 'Test');
-
-$options = array('type' => 'link', 'title' => 'Title '.date('Y/m/d H:i:s'), 'url' => 'http://fox21.at', 'tags' => 'Test');
+$options = array('type' => 'quote', 'quote' => 'Text '.date('Y/m/d H:i:s'), 'source' => 'Source', 'tags' => 'Test');
+#$options = array('type' => 'text', 'title' => 'Title '.date('Y/m/d H:i:s'), 'body' => 'Body', 'tags' => 'Test');
+#$options = array('type' => 'link', 'title' => 'Title '.date('Y/m/d H:i:s'), 'url' => 'http://fox21.at', 'tags' => 'Test');
 
 
 
