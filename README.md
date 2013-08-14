@@ -4,8 +4,8 @@
 1. Create parameters.yml file.
 
 		tumblr:
-		    consumer_key: w
-		    consumer_secret: x
-		    token: y
-		    token_secret: z
+		    consumer_key: 
+		    consumer_secret: 
+		    token: 
+		    token_secret: 
 		    blog: 
