@@ -20,7 +20,12 @@
 		    token: mThIsIsOnlyAFakeqmRdTYFDThIsIsOnlyAFakeck
 		    token_secret: vDlMllCvThIsIsOnlyAFake2rrEThIsIsOnlyAFakeeYijk
 		    blog: thefox21
-		
+
+1. Install [Composer](http://getcomposer.org/) Packages.
+
+	Run the following command in your shell:
+	
+		composer update
 
 # Tumblr API v2 documentation
 [http://www.tumblr.com/docs/en/api/v2](http://www.tumblr.com/docs/en/api/v2)
