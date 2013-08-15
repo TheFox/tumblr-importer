@@ -64,8 +64,8 @@ $options = array('type' => 'quote', 'quote' => 'Text '.date('Y/m/d H:i:s'), 'sou
 
 
 try{
-	$res = $client->createPost($paramters['tumblr']['blog'].'.tumblr.com', $options);
-	#$res = $client->createPost($paramters['tumblr']['blog'], $options);
+	$res = $client->createPost($paramters['tumblr']['blog'], $options);
+	#$res = $client->createPost($paramters['tumblr']['blog'].'.tumblr.com', $options);
 	#var_export($res);
 }
 catch(Exception $e){
