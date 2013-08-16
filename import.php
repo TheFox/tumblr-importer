@@ -197,7 +197,7 @@ while(!feof($fh)){
 }
 fclose($fh);
 
-if(!$argPostsNoClear){
+if(!$argPostsNoClear && !$exit && !$errors){
 	$fh = fopen('posts.txt', 'w');
 	fclose($fh);
 }
