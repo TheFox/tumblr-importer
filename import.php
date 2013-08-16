@@ -87,7 +87,7 @@ while(!feof($fh)){
 	
 	$text = $row;
 	$source = '';
-	$tags = '';
+	$tagsstr = '';
 	
 	$pos = strrpos($row, ' - ');
 	if($pos !== false){
@@ -100,11 +100,11 @@ while(!feof($fh)){
 		$pos = strrpos($source, '#');
 		if($pos !== false){
 			
-			$tags = substr($source, $pos + 1);
+			$tagsstr = substr($source, $pos + 1);
 			$source = substr($source, 0, $pos);
 			
 			
-			#print "\t tag pos: $pos '$source' '$tags'\n";
+			#print "\t tag pos: $pos '$source' '$tagsstr'\n";
 		}
 		
 	}
@@ -112,25 +112,25 @@ while(!feof($fh)){
 		$pos = strrpos($row, '#');
 		if($pos !== false){
 			$text = substr($row, 0, $pos);
-			$tags = substr($row, $pos + 1);
+			$tagsstr = substr($row, $pos + 1);
 		}
 	}
 	
 	$text = trim($text);
 	$source = trim($source);
-	$tags = trim($tags);
+	$tagsstr = trim($tagsstr);
 	
 	if($text){
 		$options['quote'] = $text;
 		if($source){
 			$options['source'] = $source;
 		}
-		if($tags){
-			$options['tags'] = $tags;
+		if($tagsstr){
+			$options['tags'] = $tagsstr;
 		}
 		
 		
-		print "post '$text' | '$source' | '$tags' ... ";
+		print "post '$text' | '$source' | '$tagsstr' ... ";
 		
 		try{
 			$res = false;
