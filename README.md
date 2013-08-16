@@ -33,7 +33,7 @@
 1. Run `php import.php` in your shell.
 
 # posts.txt
-Create a `posts.txt` file in the same directory as `import.php`. There are only _queued_ _quote_ posts possible.
+Create a `posts.txt` file in the same directory as `import.php`. There are (up to now) only _queued_ _quote_ posts possible.
 
 ### Format
 
