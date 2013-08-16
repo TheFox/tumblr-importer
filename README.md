@@ -38,9 +38,12 @@ Create a `posts.txt` file in the same directory as `import.php`. There are only 
 ### Format
 
 	Text
+	Text # Tag1
 	Text # Tag1,Tag2
 	Text - Source
 	Text - Source # Tag1,Tag2
+	This is my Hello World example. # HelloWorld,Hello World
+	This is my Hello World #example. # HelloWorld
 
 Each line is one post.
 

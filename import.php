@@ -125,7 +125,12 @@ while(!feof($fh)){
 	
 	if($text){
 		
-		$tagsstrItems = preg_split('/,/', strtolower($tagsstr));
+		$tagsstrItems = array();
+		$tagsstrItemsLower = array();
+		if($tagsstr){
+			$tagsstrItems = preg_split('/,/', $tagsstr);
+			$tagsstrItemsLower = array_map(function($tag){ return strtolower($tag); }, $tagsstrItems);
+		}
 		
 		if(strpos($text, '#') !== false){
 			$tags = preg_split('/#/', $text);
@@ -140,14 +145,14 @@ while(!feof($fh)){
 					}
 				}
 				
-				if(!in_array(strtolower($tag), $tagsstrItems)){
+				if(!in_array(strtolower($tag), $tagsstrItemsLower)){
 					$tag = str_replace('_', ' ', $tag);
 					$tagsUse[] = $tag;
 				}
 			}
 			
 			$text = str_replace('#', '', $text);
-			$tagsstr .= ','.join(',', $tagsUse);
+			$tagsstr = join(',', array_merge($tagsstrItems, $tagsUse));
 		}
 		
 		$options['quote'] = $text;
