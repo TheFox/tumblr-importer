@@ -1,5 +1,6 @@
 <?php
 
+$DEBUG = 0;
 if(PHP_SAPI != 'cli') die('ERROR: You must run this script under shell.');
 
 chdir(dirname(__FILE__));
@@ -61,9 +62,9 @@ if(!isset($paramters['tumblr']['blog'])){
 
 $options = array(
 	'type' => 'quote',
-	#'quote' => 'Text \'y\' "x" '.date('Y/m/d H:i:s'),
+	#'quote' => 'Text',
 	#'source' => 'Source',
-	#'tags' => 'Test',
+	#'tags' => 'Tag',
 	'state' => 'queue',
 );
 
@@ -134,7 +135,9 @@ while(!feof($fh)){
 		
 		try{
 			$res = false;
-			$res = $client->createPost($paramters['tumblr']['blog'], $options);
+			if(!$DEBUG){
+				$res = $client->createPost($paramters['tumblr']['blog'], $options);
+			}
 			print 'done: ';
 			if($res){
 				$successfull++;
@@ -148,9 +151,11 @@ while(!feof($fh)){
 		catch(Exception $e){
 			print 'ERROR: '.$e->getMessage();
 			$errors++;
-			#exit(1);
 		}
 		print "\n";
+	}
+	else{
+		$errors++;
 	}
 	
 	#sleep(1);
