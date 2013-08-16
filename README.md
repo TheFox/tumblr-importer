@@ -35,7 +35,7 @@
 # posts.txt
 Create a `posts.txt` file in the same directory as `import.php`. There are only _queued_ _quote_ posts possible.
 
-Format:
+### Format
 
 	Text
 	Text # Tag1,Tag2
@@ -44,7 +44,12 @@ Format:
 
 Each line is one post.
 
-Note: You must clear the `posts.txt` file after executing the `import.php`. Otherwise you post the same content on each execution of `import.php`.
+# --no-clear
+You can pass `--no-clear` through the arguments of `import.php` to leave `posts.txt` with the original content:
+
+	php import.php --no-clear
+
+Otherwise `posts.txt` will be cleared after `import.php` is executed.
 
 # Tumblr API v2 documentation
 [http://www.tumblr.com/docs/en/api/v2](http://www.tumblr.com/docs/en/api/v2)

@@ -17,6 +17,15 @@ if(function_exists('pcntl_signal')){
 	pcntl_signal(SIGINT, 'signalHandler');
 }
 
+$argPostsNoClear = false;
+$argc = count($argv);
+for($argn = 1; $argn < $argc; $argn++){
+	$arg = $argv[$argn];
+	if($arg == '--no-clear'){
+		$argPostsNoClear = true;
+	}
+}
+
 
 $paramtersFilePath = 'parameters.yml';
 if(!file_exists($paramtersFilePath)){
@@ -149,6 +158,11 @@ while(!feof($fh)){
 	if($exit) break;
 }
 fclose($fh);
+
+if(!$argPostsNoClear){
+	$fh = fopen('posts.txt', 'w');
+	fclose($fh);
+}
 
 print "\nlines: ".$lines."\nsuccessfull: ".$successfull."\nerrors: ".$errors."\n";
 
