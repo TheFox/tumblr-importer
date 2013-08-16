@@ -97,7 +97,7 @@ while(!feof($fh)){
 		#print "\t source pos: $pos\n";
 		#print "\t substr '$source'\n";
 		
-		$pos = strpos($source, '#');
+		$pos = strrpos($source, '#');
 		if($pos !== false){
 			
 			$tags = substr($source, $pos + 1);
@@ -109,7 +109,7 @@ while(!feof($fh)){
 		
 	}
 	else{
-		$pos = strpos($row, '#');
+		$pos = strrpos($row, '#');
 		if($pos !== false){
 			$text = substr($row, 0, $pos);
 			$tags = substr($row, $pos + 1);
