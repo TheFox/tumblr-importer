@@ -1,6 +1,8 @@
 <?php
 
 $DEBUG = 0;
+$TAGS_BAD_CHARS = array(' ', '.', ',');
+
 if(PHP_SAPI != 'cli') die('ERROR: You must run this script under shell.');
 
 chdir(dirname(__FILE__));
@@ -122,6 +124,32 @@ while(!feof($fh)){
 	$tagsstr = trim($tagsstr);
 	
 	if($text){
+		
+		$tagsstrItems = preg_split('/,/', strtolower($tagsstr));
+		
+		if(strpos($text, '#') !== false){
+			$tags = preg_split('/#/', $text);
+			array_shift($tags);
+			
+			$tagsUse = array();
+			foreach($tags as $tag){
+				foreach($TAGS_BAD_CHARS as $badChar){
+					$pos = strpos($tag, $badChar);
+					if($pos !== false){
+						$tag = substr($tag, 0, $pos);
+					}
+				}
+				
+				if(!in_array(strtolower($tag), $tagsstrItems)){
+					$tag = str_replace('_', ' ', $tag);
+					$tagsUse[] = $tag;
+				}
+			}
+			
+			$text = str_replace('#', '', $text);
+			$tagsstr .= ','.join(',', $tagsUse);
+		}
+		
 		$options['quote'] = $text;
 		if($source){
 			$options['source'] = $source;
