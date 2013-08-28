@@ -1,4 +1,5 @@
-# Install
+# Tumblr Importer
+## Install
 1. [Register application](http://www.tumblr.com/oauth/apps) on Tumblr.
 1. Click on _Explore API_ and grant your application to access your Tumblr account to get the _Token_ and the _Token Secret_.
 1. Create `parameters.yml` file with your keys and tokens vom step 2.
@@ -32,10 +33,10 @@
 1. Create a `posts.txt` file.
 1. Run `php import.php` in your shell.
 
-# posts.txt
+## posts.txt
 Create a `posts.txt` file in the same directory as `import.php`. There are (up to now) only _queued_ _quote_ posts possible.
 
-### Format
+#### Format
 
 	Text
 	Text # Tag1
@@ -47,12 +48,12 @@ Create a `posts.txt` file in the same directory as `import.php`. There are (up t
 
 Each line is one post.
 
-# --no-clear
+## --no-clear
 You can pass `--no-clear` through the arguments of `import.php` to leave `posts.txt` with the original content:
 
 	php import.php --no-clear
 
 Otherwise `posts.txt` will be cleared after `import.php` is executed.
 
-# Tumblr API v2 documentation
+## Tumblr API v2 documentation
 [http://www.tumblr.com/docs/en/api/v2](http://www.tumblr.com/docs/en/api/v2)
