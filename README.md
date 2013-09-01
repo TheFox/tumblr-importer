@@ -1,4 +1,6 @@
 # Tumblr Importer
+Import posts from a text file. One line per post.
+
 Visit [fox21.at](http://fox21.at).
 
 ## Install
