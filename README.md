@@ -1,4 +1,8 @@
 # Tumblr Importer
+Import posts from a text file. One line per post.
+
+Visit [fox21.at](http://fox21.at).
+
 ## Install
 1. [Register application](http://www.tumblr.com/oauth/apps) on Tumblr.
 1. Click on _Explore API_ and grant your application to access your Tumblr account to get the _Token_ and the _Token Secret_.
