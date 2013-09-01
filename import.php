@@ -187,9 +187,6 @@ while(!feof($fh)){
 		}
 		print "\n";
 	}
-	else{
-		$errors++;
-	}
 	
 	#sleep(1);
 	
