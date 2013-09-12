@@ -5,7 +5,7 @@ $TAGS_BAD_CHARS = array(' ', '.', ',');
 
 if(PHP_SAPI != 'cli') die('ERROR: You must run this script under shell.');
 
-chdir(dirname(__FILE__));
+chdir(__DIR__);
 
 date_default_timezone_set('Europe/Vienna');
 declare(ticks = 1);
