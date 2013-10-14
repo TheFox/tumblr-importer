@@ -1,8 +1,6 @@
 # Tumblr Importer
 Import posts from a text file. One line per post.
 
-Visit [fox21.at](http://fox21.at).
-
 ## Install
 1. [Register application](http://www.tumblr.com/oauth/apps) on Tumblr.
 1. Click on _Explore API_ and grant your application to access your Tumblr account to get the _Token_ and the _Token Secret_.
@@ -60,7 +58,7 @@ You can pass `--no-clear` through the arguments of `import.php` to leave `posts.
 Otherwise `posts.txt` will be cleared after `import.php` is executed.
 
 ## Tumblr API v2 documentation
-[http://www.tumblr.com/docs/en/api/v2](http://www.tumblr.com/docs/en/api/v2)
+<http://www.tumblr.com/docs/en/api/v2>
 
 ## License
 Copyright (C) 2013 Christian Mayer (<thefox21at@gmail.com> - <http://fox21.at>)
