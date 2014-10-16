@@ -5,11 +5,9 @@ $TAGS_BAD_CHARS = array(' ', '.', ',');
 
 if(PHP_SAPI != 'cli') die('ERROR: You must run this script under shell.');
 
-chdir(dirname(__FILE__));
-
 date_default_timezone_set('Europe/Vienna');
 declare(ticks = 1);
-require 'vendor/autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
 use \Symfony\Component\Yaml\Yaml;
 
@@ -30,7 +28,7 @@ for($argn = 1; $argn < $argc; $argn++){
 }
 
 
-$paramtersFilePath = 'parameters.yml';
+$paramtersFilePath = __DIR__.'/parameters.yml';
 if(!file_exists($paramtersFilePath)){
 	die('ERROR: File "'.$paramtersFilePath.'" not found.'."\n");
 }
@@ -186,9 +184,6 @@ while(!feof($fh)){
 			$errors++;
 		}
 		print "\n";
-	}
-	else{
-		$errors++;
 	}
 	
 	#sleep(1);
